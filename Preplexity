@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f6e29a;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 560px;
+      min-height: 560px;
+      background: #f6e29a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 55px 24px 40px;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 35px;
+      box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.15);
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 32px;
+    }
+
+    .stats {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 90px;
+      font-size: 22px;
+      color: #222;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stats span {
+      white-space: nowrap;
+    }
+
+    .bio {
+      max-width: 430px;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 45px;
+    }
+
+    .follow-btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: linear-gradient(180deg, #47e600, #39cc00);
+      color: #111;
+      font-size: 22px;
+      padding: 14px 70px;
+      border-radius: 2px;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .follow-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .follow-btn.following {
+      background: linear-gradient(180deg, #7f7f7f, #5e5e5e);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding-top: 40px;
+      }
+
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .stats {
+        gap: 35px;
+        font-size: 18px;
+      }
+
+      .bio {
+        font-size: 17px;
+      }
+
+      .follow-btn {
+        font-size: 18px;
+        padding: 12px 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img
+      class="avatar"
+      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+      alt="Profile picture"
+    />
+
+    <h1>Andy Salaman</h1>
+
+    <div class="stats">
+      <span>Followers: 3000</span>
+      <span>Following: 12</span>
+    </div>
+
+    <p class="bio">
+      This is where you get the latest Amebo.<br />
+      Stay up to date with weitin no consain<br />
+      your generation.
+    </p>
+
+    <button class="follow-btn" id="followBtn">Follow me</button>
+  </div>
+
+  <script>
+    const followBtn = document.getElementById('followBtn');
+    let isFollowing = false;
+
+    followBtn.addEventListener('click', () => {
+      isFollowing = !isFollowing;
+
+      if (isFollowing) {
+        followBtn.textContent = 'Following';
+        followBtn.classList.add('following');
+      } else {
+        followBtn.textContent = 'Follow me';
+        followBtn.classList.remove('following');
+      }
+    });
+  </script>
+</body>
+</html>
