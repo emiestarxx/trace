@@ -5,180 +5,470 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="trace.css">
     <title>Trace Computer Limited</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
     <!--   <link rel="icon" href="img/favicon.png" type="img/png"> -->
 
 </head>
 <body>
-<!-- HEADER SECTION -->
 
-    <header class="Header">
-        <nav>
-            <div class="logo">TRACE LIMITED</div>
-            <ul class="nav-links">
-                <li><a href="#"> HOME </a></li>
-                <li><a href="#"> ABOUT </a></li>
-                <li><a href="#"> SERVICES </a></li>
-                <li><a href="#"> PRODUCTS </a></li>
-                <li><a href="#"> CONTACTS </a></li>
-            </ul>
-            <button class="btn-toggle">toggle</button>
-        </nav>
+ 
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-info">
+      <span><i class="fa-solid fa-phone"></i>+234 706 845 9920</span>
+      <span><i class="fa-solid fa-envelope"></i>Tracecomputerworldltd@gmail.com</span>
+    </div>
+    <div class="topbar-hours">
+      <span class="pulse-dot"></span>
+      Open Mon — Sat (8:00AM — 20:00PM)
+    </div>
+  </div>
+</div>
 
-        <!-- HERO SECTION -->
-    
-        <div class="hero-center">
-              <h1> TRACE COMPUTER LIMITED</h1>
+<!-- ===== HEADER ===== -->
+<header class="Header">
+  <nav>
+    <div class="logo">TRACE LIMITED</div>
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#products">PRODUCTS</a></li>
+      <li><a href="#contacts">CONTACTS</a></li>
+    </ul>
+    <!-- TOGGLE BUTTON -->
+    <button class="nav-cta" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">
+      <i class="fa-solid fa-headset"></i> Toggle Button
+    </button>
+    <button class="btn-toggle" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
+  <ul>
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#services">SERVICES</a></li>
+    <li><a href="#products">PRODUCTS</a></li>
+    <li><a href="#contacts">CONTACTS</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="home">
+  <div class="grid-overlay"></div>
+  <canvas id="networkCanvas"></canvas>
+
+  <div class="hero-center">
+    <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Abuja, Nigeria</span>
+    <h1><span class="gradient-text">TRACE COMPUTER</span><br>LIMITED</h1>
+    <p class="hero-sub">Your trusted partner for IT services, computer repairs, networking solutions and quality tech products in Mpape, Abuja.</p>
+    <p class="typing-line">
+      <span class="label">We specialize in:</span>
+      <span id="typed" class="typing-cursor"></span>
+    </p>
+    <div class="hero-buttons">
+      <button class="btn-primary" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">
+        <i class="fa-solid fa-screwdriver-wrench"></i> Book a Repair
+      </button>
+      <button class="btn-ghost" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        <i class="fa-solid fa-store"></i> Browse Products
+      </button>
+   <!--  </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">10+</div>
+        <div class="label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="num">5,000+</div>
+        <div class="label">Devices Repaired</div>
+      </div>
+      <div class="stat">
+        <div class="num">98%</div>
+        <div class="label">Happy Clients</div>
+      </div>
+    </div>
+  </div>
+ --></section>
+
+<main>
+
+  <!-- ===== ABOUT SECTION (CAROUSEL) ===== -->
+  <section class="about-section" id="about">
+    <div class="section-head reveal">
+      <span class="section-tag"><i class="fa-solid fa-circle-info"></i> About Us</span>
+      <h2 class="section-title">Who We <span style="color:var(--accent)">Are</span></h2>
+    </div>
+
+    <div class="carousel reveal" id="carousel">
+      <button class="carousel-arrow prev" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="carousel-arrow next" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+
+      <div class="carousel-track" id="carouselTrack">
+        <!-- SLIDE 1 -->
+
+        <div class="carousel-slide">
+          <span class="badge">Welcome</span>
+          <h2>About Trace Computer Limited</h2>
+          <p>We are a leading IT solutions provider based in Abuja, delivering professional computer services, repairs, training, and quality tech products to individuals and businesses for over a decade.</p>
         </div>
 
-        <!-- HERO FOOTER -->
-        <div class="hero-footer">
-            <div class="date">
-                Open from <br>
-                MON - SAT
-            </div>
-            
-            <div class="socials">
-                <a href="#"> <i><img src="img/whatsapp.png" alt="instagram" width="32"></i></a>
-                <a href="#"> <i><img src="img/tiktok.png" alt="instagram" width="32" style="color: rgb(39, 227, 39);"></i></a>
-            </div>
+        <!-- SLIDE 2 -->
+        <div class="carousel-slide">
+          <span class="badge">Our Mission</span>
+          <h2>We Provide IT Solutions<br>For Your Business</h2>
+          <p>From computer networking and SIWES training to repairs and product sales — we deliver reliable technology services that empower our clients to succeed in a digital world.</p>
         </div>
+        <!-- SLIDE 3 -->
+
+        <div class="carousel-slide">
+          <span class="badge">Get Started</span>
+          <h2>Contact Us Today<br>For Your Business</h2>
+          <p>Visit our office in Abuja or reach out online. We're open Monday to Saturday, 8:00 AM to 8:00 PM, ready to handle all your computer and IT needs.</p>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <!-- ===== OUR SERVICES ===== -->
+  <section class="services-section" id="services">
+    <div class="section-head reveal">
+      <span class="section-tag"><i class="fa-solid fa-laptop-code"></i> Our Services</span>
+      <h2 class="section-title">Comprehensive <span style="color:var(--accent)">IT Solutions</span></h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="services-list reveal">
+        <h2>What We Offer</h2>
+        <ul>
+          <li><i class="fa-solid fa-graduation-cap"></i> SIWES</li>
+          <li><i class="fa-solid fa-network-wired"></i> Computer Networking</li>
+          <li><i class="fa-solid fa-computer"></i> Computer Operations</li>
+          <li><i class="fa-solid fa-user-tie"></i> Industrial Training</li>
+          <li><i class="fa-solid fa-screwdriver-wrench"></i> PC Repair</li>
+          <li><i class="fa-solid fa-tablet-screen-button"></i> Tablet Repair</li>
+          <li><i class="fa-solid fa-gauge-high"></i> PC Tune Up</li>
+          <li><i class="fa-solid fa-download"></i> Installation</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="icon-wrap"><i class="fa-solid fa-award"></i></div>
+        <h3>THE BEST OF THE BEST</h3>
+        <p>Trusted by thousands of customers across Abuja. Certified technicians, fast turnaround, fair pricing, and a service warranty on every repair.</p>
+        <button class="btn-primary" style="align-self:center" onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-headset"></i> Talk to Us
+        </button>
+      </div>
+    </div>
+
+    <!-- WE ALSO OFFER (sliding cards REBUILD THIS PART) -->
+    <div class="section-head reveal" style="margin-top:80px;margin-bottom:30px">
+      <span class="section-tag"><i class="fa-solid fa-plus"></i> We Also Offer</span>
+    </div>
+    <div class="sliding-area" aria-hidden="false">
+      <div class="group" id="slideGroup1">
+        <div class="card"><div class="num">01</div><div class="text">PC Service Repair</div></div>
+        <div class="card"><div class="num">02</div><div class="text">Tablet Repair</div></div>
+        <div class="card"><div class="num">03</div><div class="text">PC Tune up</div></div>
+        <div class="card"><div class="num">04</div><div class="text">IT Consulting</div></div> 
+        <div class="card"><div class="num">05</div><div class="text">Sales of Computer Accessories</div></div>
+        <div class="card"><div class="num">06</div><div class="text">Sales of Computer Softwares</div></div>
+        <div class="card"><div class="num">07</div><div class="text">Sales of New and Old Laptops</div></div>
+        <div class="card"><div class="num">08</div><div class="text">Installation</div></div>
+        <div class="card"><div class="num">09</div><div class="text">Networking</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED PRODUCTS ===== -->
+  <section class="products" id="products">
+    <div class="section-head reveal">
+      <span class="section-tag"><i class="fa-solid fa-store"></i> Featured Products</span>
+      <h2 class="section-title">Quality <span style="color:var(--accent)">Tech Products</span> In Stock</h2>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- 6 unique products; uses your local image with icon fallback -->
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-plug"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="Cables" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Accessories</div>
+          <p>Cables</p>
+          <div class="price">From ₦3,500</div>
+        </div>
+      </div>
+
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-laptop"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="Laptops" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Devices</div>
+          <p>Laptops</p>
+          <div class="price">From ₦450,000</div>
+        </div>
+      </div>
+
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-usb"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="Flash Drive" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Storage</div>
+          <p>Flash Drive</p>
+          <div class="price">From ₦7,500</div>
+        </div>
+      </div>
+
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-keyboard"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="Keyboards" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Accessories</div>
+          <p>Keyboards</p>
+          <div class="price">From ₦4,000</div>
+        </div>
+      </div>
+
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-computer-mouse"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="Mouse" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Accessories</div>
+          <p>Wireless Mouse</p>
+          <div class="price">From ₦4,500</div>
+        </div>
+      </div>
+
+      <div class="products-card reveal">
+        <div class="product-img">
+          <div class="product-icon"><i class="fa-solid fa-hard-drive"></i></div>
+          <img src="img/lifestyle (2).jpg" alt="External HDD" onerror="this.style.display='none'">
+        </div>
+        <div class="info">
+          <div class="cat">Storage</div>
+          <p>External HDD</p>
+          <div class="price">From ₦45,000</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-exploremore">
+      <button class="btn" onclick="showToast('Full catalog coming soon!')">
+        EXPLORE MORE <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTS ===== -->
+  <section class="contacts" id="contacts">
+    <div class="section-head reveal">
+      <span class="section-tag"><i class="fa-solid fa-headset"></i> Get In Touch</span>
+      <h2 class="section-title">Visit Our <span style="color:var(--accent)">Office</span> or Send a Message</h2>
+    </div>
+
+    <div class="contacts-grid">
+      <div class="contact-info reveal">
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-location-dot"></i></div>
+          <h4>Our Location</h4>
+          <p>Plot 12, Aminu Kano Crescent<br>Federal Capital Territory<br>Abuja, Nigeria</p>
+        </div>
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-clock"></i></div>
+          <h4>Business Hours</h4>
+          <p>Monday — Saturday: 8:00 AM — 8:00 PM<br>Sunday: Closed</p>
+        </div>
+        <div class="info-card">
+          <div class="ic"><i class="fa-solid fa-phone"></i></div>
+          <h4>Contact Info</h4>
+          <p>+234 803 000 0000<br>info@tracelimited.com</p>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <input type="text" required class="form-input" placeholder="Full Name">
+          <input type="tel" required class="form-input" placeholder="Phone Number">
+        </div>
+        <div class="form-row">
+          <input type="email" required class="form-input" placeholder="Email Address">
+          <select required class="form-input">
+            <option value="">Select Service...</option>
+            <option>PC Repair</option>
+            <option>Tablet Repair</option>
+            <option>Computer Networking</option>
+            <option>SIWES / Industrial Training</option>
+            <option>Other Inquiry</option>
+          </select>
+        </div>
+        <textarea required class="form-input" rows="5" placeholder="Tell us about your device or issue..." style="margin-bottom:14px;resize:vertical"></textarea>
+        <button type="submit" class="btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">TRACE LIMITED</div>
+        <p>Your trusted technology partner in Abuja. Repairs, products, training, and IT consulting — all under one roof.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="#services">SIWES</a>
+        <a href="#services">Computer Networking</a>
+        <a href="#services">PC Repair</a>
+        <a href="#services">Industrial Training</a>
+        <a href="#services">IT Consulting</a>
+      </div>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contacts">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <a href="#products">Cables</a>
+        <a href="#products">Laptops</a>
+        <a href="#products">Flash Drives</a>
+        <a href="#products">Accessories</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Trace Computer Limited. All rights reserved.</p>
+      <p>Open Mon — Sat (8:00 — 20:00)</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <i class="fa-solid fa-circle-check"></i>
+  <span id="toastMsg">Message sent successfully!</span>
+</div>
     
 
-    </header>
+<script>
+/* ===== MOBILE MENU ===== */
+const mobileMenu = document.getElementById('mobileMenu');
+document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
+document.getElementById('closeMenu').addEventListener('click', () => mobileMenu.classList.remove('open'));
+document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
 
-    <main>
-        <!-- ABOUT SECTION -->
-        <section class="about-section" style="color: pink;">
+/* ===== TYPING EFFECT ===== */
+const phrases = ['SIWES Training','Computer Networking','PC & Tablet Repairs','Industrial Training','IT Consulting'];
+const typedEl = document.getElementById('typed');
+let pIdx=0, cIdx=0, deleting=false;
+function typeLoop(){
+  const cur = phrases[pIdx];
+  if(!deleting){
+    typedEl.textContent = cur.slice(0, ++cIdx);
+    if(cIdx === cur.length){ deleting = true; setTimeout(typeLoop, 1800); return; }
+  } else {
+    typedEl.textContent = cur.slice(0, --cIdx);
+    if(cIdx === 0){ deleting = false; pIdx = (pIdx+1) % phrases.length; }
+  }
+  setTimeout(typeLoop, deleting ? 35 : 75);
+}
+typeLoop();
 
-       <div class="carousel" id="carousel">
-        <div class="carousel-track">
-            <!-- SLIDE 1 -->
-             <div class="carousel-slide">
-                <h2>About Trace Computer Limited</h2>
-             </div>
-            <!-- SLIDE 2 -->
-             <div class="carousel-slide">
-                <h2>We Provide IT solutions <br>For Your Business</h2>
-             </div>
-            <!-- SLIDE 3 -->
-             <div class="carousel-slide">
-                <h2>ContACT Us Today <br>For Your Business</h2>
-             </div>
+/* ===== HERO NETWORK CANVAS ===== */
 
-             <!-- DOTS -->
-              <div class="carousel-dots"></div>
-          </div>
-        </div>
-       </div>
-         </section>
 
-         <!-- OUR SERVICES -->
+/* ===== CAROUSEL ===== */
+const track = document.getElementById('carouselTrack');
+const slides = track.children.length;
+let curSlide = 0;
+const dotsContainer = document.getElementById('carouselDots');
 
-         <section class="services-section">
-            <div class="services-list">
-                <h2>OUR SERVICES</h2>
-                <ul>
-                    <li> SIWES </li>
-                    <li> Computer Networking</li>
-                    <li>Computer Operations</li>
-                    <li>Industrial Training</li>
-                </ul>
-            </div>
+// build dots
+for(let i=0;i<slides;i++){
+  const dot = document.createElement('button');
+  if(i===0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+function goToSlide(i){
+  curSlide = (i + slides) % slides;
+  track.style.transform = `translateX(-${curSlide * 100}%)`;
+  document.querySelectorAll('#carouselDots button').forEach((d, idx) => {
+    d.classList.toggle('active', idx === curSlide);
+  });
+}
+document.getElementById('prevBtn').addEventListener('click', () => goToSlide(curSlide - 1));
+document.getElementById('nextBtn').addEventListener('click', () => goToSlide(curSlide + 1));
+// auto-play
+let autoSlide = setInterval(() => goToSlide(curSlide + 1), 5000);
+document.getElementById('carousel').addEventListener('mouseenter', () => clearInterval(autoSlide));
+document.getElementById('carousel').addEventListener('mouseleave', () => {
+  autoSlide = setInterval(() => goToSlide(curSlide + 1), 5000);
+});
 
-            <div class="service-card">
-                <h3>THE BEST OF THE BEST</h3>
-            </div>
+/* ===== DUPLICATE SLIDING CARDS FOR SEAMLESS LOOP ===== */
 
-             <!-- WE ALSO OFFER -->
-         
-        <div aria-hidden="false" class="sliding-area">
-            <div class="group">
-            <div class="card">PC Service Repair</div>
-            <div class="card">Tablet Repair</div>
-            <div class="card">PC Tune up</div>
-            <div class="card">IT Consulting</div>
-            <div class="card">Sales of Computer Accessories</div>
-            <div class="card">Sales of computer Softwares</div>
-            <div class="card">Sales of new and old laptops</div>
-            <div class="card">Installation</div>
-            <div class="card">Networking</div>
-            
-            </div>
 
-            <div class="group">
-            <div class="card">PC Service Repair</div>
-            <div class="card">Tablet Repair</div>
-            <div class="card">PC Tune up</div>
-            <div class="card">IT Consulting</div>
-            <div class="card">Sales of Computer Accessories</div>
-            <div class="card">Sales of computer Softwares</div>
-            <div class="card">Sales of new and old laptops</div>
-            <div class="card">Installation</div>
-            <div class="card">Networking</div>
+/* ===== SCROLL REVEAL ===== */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-            </div>
+/* ===== TOAST ===== */
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMsg');
+let toastTimer;
+function showToast(msg){
+  toastMsg.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+}
 
-         </section>
+/* ===== FORM ===== */
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  showToast("Message sent! We'll respond within 24 hours.");
+  e.target.reset();
+});
+</script>
 
-            <!-- FEATURED PRODUCTS -->
-             <section class="products">
-                <h2>FEATURED PRODUCTS</h2>
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-
-                <div class="products-grid"> 
-                    <div class="products-card">
-                        <div class="product-img">
-                            <img src="img/lifestyle (2).jpg" alt="class">
-                        </div>
-                        <p>Cables</p>
-                    </div>
-                </div>
-                <div class="btn-exploremore">
-                    <buttton class="btn">EXPLORE MORE</buttton>
-                </div>
-             </section>
-           
-      
-     
-     </main>
-    
 </body>
 </html>
