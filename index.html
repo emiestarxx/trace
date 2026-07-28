@@ -382,6 +382,29 @@
     
 
 <script>
+     /* TOGGLE BUTTON */
+  // 
+const toggleBtn = document.getElementById('theme-toggle');
+const html = document.documentElement; // <html> tag
+
+/* CHECKING FOR SAVED THEME IN LOCAL STORAGE */
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.setAttribute('data-theme', savedTheme);
+updateIcon(savedTheme);
+
+toggleBtn.addEventListener('click', () => {
+  let currentTheme = html.getAttribute('data-theme');
+  let newTheme = currentTheme === 'light' ? 'dark' : 'light'
+
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme); //to save preferance
+  updateIcon(newTheme);
+});
+
+function updateIcon(theme) {
+  toggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
+}
+
 /* ===== MOBILE MENU ===== */
 const mobileMenu = document.getElementById('mobileMenu');
 document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
