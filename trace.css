@@ -4,6 +4,13 @@
     --fg:#ecf1ec; --muted:#d2dadd;
     --accent:#bfe2e8; --accent-2:#40d7f2; --accent-glow:rgba(63, 201, 236, 0.45);
   }
+/* LIGHT MODE */
+  [data-theme="light"] {
+    --bg: #F8FAFC; --bg-2:#4b5773;
+    --card: #FFFF; --card-2:#6177aa; --fg:#ecf1ec;  --muted:#bfc9cd;
+    --border:rgba(39, 223, 255, 0.14); --border-strong:rgba(0,217,255,0.35);
+     --accent:#4f7cff; --accent-2:#5b83fc; --accent-glow:rgba(158, 232, 250, 0.45);
+  }
   *{box-sizing:border-box;
     margin:0;
     padding:0}
@@ -463,8 +470,10 @@
 
   /* toast */
   .toast{
-    position:fixed;bottom:24px;left:50%;
-    transform:translateX(-50%) translateY(120%);
+    position:fixed;bottom:-100px;left:50%;
+    transform:translateX(-50%) translateY(0%);
+   visibilty: hidden;
+   opacity: 0;
     background:linear-gradient(135deg, var(--card), var(--card-2));
     border:1px solid var(--border-strong);color:var(--fg);
     padding:14px 22px;border-radius:12px;font-size:14px;
