@@ -405,6 +405,7 @@
   .btn-exploremore .btn:hover{transform:translateY(-2px)}
 
   /* ===== CONTACTS ===== */
+
   .contacts{padding:90px 24px;max-width:1280px;margin:0 auto}
   .contacts-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:30px}
   .contact-info{display:flex;flex-direction:column;gap:18px}
@@ -412,28 +413,28 @@
     background:rgba(18,26,46,0.55);backdrop-filter:blur(12px);
     border:1px solid var(--border);border-radius:14px;padding:22px;
   }
-  .info-card .ic{
-    width:44px;height:44px;border-radius:10px;
-    background:linear-gradient(135deg,rgba(0,217,255,0.15),rgba(0,217,255,0.04));
-    border:1px solid var(--border-strong);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--accent);margin-bottom:12px;font-size:18px;
-  }
+ .info-card{
+  background: var(--card-glass); /* CHANGED */
+  backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;padding:22px;
+}
   .info-card h4{font-family:'Orbitron',sans-serif;font-weight:700;font-size:14px;margin-bottom:6px}
   .info-card p{color:var(--muted);font-size:13.5px}
-  .contact-form{
-    background:rgba(18,26,46,0.55);backdrop-filter:blur(12px);
-    border:1px solid var(--border);border-radius:14px;padding:30px;
-  }
+ .contact-form{
+  background: var(--card-glass); /* CHANGED */
+  backdrop-filter:blur(12px);
+  border:1px solid var(--border);border-radius:14px;padding:30px;
+}
   .contact-form h3{font-family:'Orbitron',sans-serif;font-weight:700;font-size:20px;margin-bottom:20px}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-  .form-input{
-    width:100%;background:rgba(0,0,0,0.25);border:1px solid var(--border);
-    border-radius:10px;padding:13px 16px;color:var(--fg);
-    font-family:inherit;font-size:14px;transition:border-color .25s;
-  }
+ .form-input{
+  width:100%;background: var(--input-bg); /* CHANGED */
+  border:1px solid var(--border);
+  border-radius:10px;padding:13px 16px;color:var(--fg);
+  font-family:inherit;font-size:14px;transition:border-color .25s;
+}
   .form-input:focus{outline:none;border-color:var(--accent)}
-  .form-input::placeholder{color:#5b6680}
+ .form-input::placeholder{color: var(--muted)} /* CHANGED from #5b6680 */
   .contact-form button{width:100%;justify-content:center;margin-top:8px}
 
   /* ===== FOOTER ===== */
