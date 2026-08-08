@@ -1,9 +1,15 @@
- /* DARK MODE */
- :root{
+  /* DARK MODE (Default) */
+  :root{
     --bg:#0B1220; --bg-2:#0d1424; --card:#121a2e; --card-2:#244083;
     --border:rgba(0,217,255,0.14); --border-strong:rgba(0,217,255,0.35);
     --fg:#ecf1ec; --muted:#d2dadd;
     --accent:#bfe2e8; --accent-2:#40d7f2; --accent-glow:rgba(63, 201, 236, 0.45);
+    
+    /* --- NEW VARIABLES ADDED --- */
+    --header-bg: rgba(7,11,22,0.85);
+    --bg-deep: #070b16;
+    --card-glass: rgba(18,26,46,0.55);
+    --input-bg: rgba(0,0,0,0.25);
   }
 
   /* LIGHT MODE */
@@ -11,8 +17,13 @@
     --bg: #f1f5fa; --bg-2:#eef2f7;
     --card: #ffffff; --card-2:#f8fafc; --fg:#0f172a;  --muted:#64748b;
     --border:rgba(15, 23, 42, 0.08); --border-strong:rgba(15,23, 42,0.15);
-     --accent:#2563eb; --accent-2:#06b6d4; --accent-glow:rgba(37, 99, 235, 0.15);
+    --accent:#2563eb; --accent-2:#06b6d4; --accent-glow:rgba(37, 99, 235, 0.15);
     
+    /* --- NEW VARIABLES ADDED --- */
+    --header-bg: rgba(241,245,250,0.9); /* Light frosted glass */
+    --bg-deep: #eef2f7;                 /* Light background for hero fall-off */
+    --card-glass: rgba(255,255,255,0.7);/* Light frosted glass for contact cards */
+    --input-bg: rgba(0,0,0,0.05);       /* Very light input background */
   }
   
   *{box-sizing:border-box;
