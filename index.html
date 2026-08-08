@@ -38,16 +38,23 @@
       <li><a href="#products">PRODUCTS</a></li>
       <li><a href="#contacts">CONTACTS</a></li>
     </ul>
-   <!-- TOGGLE BUTTON -->
+
+    <!-- TOGGLE BUTTON -->
      <!-- onclick="document.getElementById('contacts').scrollIntoView({behavior:'smooth'}) class="fa-solid fa-headset"" -->
-    <button class="nav-cta" id="theme-toggle"> <i>🌙</i></button>
+      <div class="nav-actions">
+         <button class="toggle-btn" id="theme-toggle"> <i>🌙</i></button>
   <!--   HAMBURGER MENU -->
     <button class="btn-toggle" id="menuBtn"><i class="fa-solid fa-bars"></i></button>
+      </div>
   </nav>
+    
+   
 </header>
 
 <!-- Mobile menu -->
+
 <div class="mobile-menu" id="mobileMenu">
+
   <button class="close" id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
   <ul>
     <li><a href="#home">HOME</a></li>
@@ -56,6 +63,8 @@
     <li><a href="#products">PRODUCTS</a></li>
     <li><a href="#contacts">CONTACTS</a></li>
   </ul>
+
+
 </div>
 
 <!-- ===== HERO SECTION ===== -->
@@ -65,7 +74,7 @@
 
   <div class="hero-center">
     <span class="hero-tag"><i class="fa-solid fa-location-dot"></i> Abuja, Nigeria</span>
-    <h1><span class="gradient-text">TRACE COMPUTER</span><br>LIMITED</h1>
+    <h1><span class="gradient-text">TRACE COMPUTER </span><br>LIMITED</h1>
     <p class="hero-sub">Your trusted partner for IT services, computer repairs, networking solutions and quality tech products in Mpape, Abuja.</p>
     <p class="typing-line">
       <span class="label">We specialize in:</span>
@@ -382,7 +391,7 @@
     
 
 <script>
-     /* TOGGLE BUTTON */
+  /* TOGGLE BUTTON DESTOP ONLY*/
   // 
 const toggleBtn = document.getElementById('theme-toggle');
 const html = document.documentElement; // <html> tag
@@ -405,7 +414,10 @@ function updateIcon(theme) {
   toggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
-/* ===== MOBILE MENU ===== */
+
+
+
+   /* ===== MOBILE MENU ===== */
 const mobileMenu = document.getElementById('mobileMenu');
 document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
 document.getElementById('closeMenu').addEventListener('click', () => mobileMenu.classList.remove('open'));
